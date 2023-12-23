@@ -4,7 +4,7 @@ interface CheckboxProps {
   label: string;
 }
 
-const Checkbox = ({ checked, onChange, label }: CheckboxProps) => {
+const Checkbox: React.FC<CheckboxProps> = ({ checked, onChange, label }) => {
   const handleCheckboxChange = () => {
     onChange();
   };
@@ -12,11 +12,12 @@ const Checkbox = ({ checked, onChange, label }: CheckboxProps) => {
   return (
     <div>
       <input
+        id={label.replace(/\s/g, "")}
         type="checkbox"
         checked={checked}
         onChange={handleCheckboxChange}
       />
-      <label onClick={handleCheckboxChange}>{label}</label>
+      <label htmlFor={label.replace(/\s/g, "")}>{label}</label>
     </div>
   );
 };

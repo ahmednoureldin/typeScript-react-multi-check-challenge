@@ -22,7 +22,6 @@ const App = () => {
     setOptions(newOptions);
 
     const allChecked = newOptions.every((option) => option.checked);
-
     setSelectAll(allChecked);
   };
 
@@ -32,8 +31,8 @@ const App = () => {
       <div className={styles.multicheckOptions}>
         <Checkbox
           checked={selectAll}
-          onChange={handleSelectAllChange}
           label="Select All"
+          onChange={handleSelectAllChange}
         />
         {options.map((option, index) => (
           <Checkbox
