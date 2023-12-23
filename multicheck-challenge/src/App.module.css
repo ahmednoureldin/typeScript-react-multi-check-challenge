@@ -1,0 +1,9 @@
+.multicheckOptions {
+  display: flex;
+  flex-wrap: wrap;
+  width: 300px;
+}
+
+.multicheckOptions > div {
+  flex-basis: 50%;
+}

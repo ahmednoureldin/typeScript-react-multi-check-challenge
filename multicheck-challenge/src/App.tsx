@@ -27,21 +27,24 @@ const App = () => {
   };
 
   return (
-    <div className={styles.multicheckOptions}>
-      <Checkbox
-        checked={selectAll}
-        onChange={handleSelectAllChange}
-        label="Select All"
-      />
-      {options.map((option, index) => (
+    <>
+      <h1>my-multi-check</h1>
+      <div className={styles.multicheckOptions}>
         <Checkbox
-          key={index}
-          checked={option.checked}
-          onChange={() => handleOptionChange(index)}
-          label={option.label}
+          checked={selectAll}
+          onChange={handleSelectAllChange}
+          label="Select All"
         />
-      ))}
-    </div>
+        {options.map((option, index) => (
+          <Checkbox
+            key={index}
+            checked={option.checked}
+            onChange={() => handleOptionChange(index)}
+            label={option.label}
+          />
+        ))}
+      </div>
+    </>
   );
 };
 
